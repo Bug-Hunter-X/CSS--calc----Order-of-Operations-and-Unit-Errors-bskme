@@ -1,0 +1,11 @@
+The corrected CSS code addresses the order of operations issue using parentheses and ensures consistent units.
+
+```css
+div {
+  width: calc((100% + 20px) * 2);
+  /* Correct use of parenthesis */
+  height: calc(100px + 50%); /*Consistent units*/
+}
+```
+
+This version ensures that the addition is performed before the multiplication, producing the correct width.  It also ensures consistent use of units to prevent errors.
