@@ -1,0 +1,26 @@
+The CSS property `calc()` is used to perform calculations, but sometimes the order of operations might not be what you expect, resulting in unexpected values.  For instance, multiplication and division are done before addition and subtraction.  If you are not careful with your parentheses, the result will be wrong. Consider this example:
+
+```css
+div {
+  width: calc(100% - 20px);
+}
+```
+
+This works as expected.  However, if you try to add and multiply without parenthesis:
+
+```css
+div {
+  width: calc(100% + 20px * 2);
+}
+```
+
+This will first multiply 20px by 2, and then add the result to 100%, not what you would expect if you expected the 100% to be added to 20px first.
+Parenthesis are very important!
+
+```css
+div {
+  width: calc((100% + 20px) * 2);
+}
+```
+
+This is the correct way to obtain expected results.  Another common error is using units inconsistently (e.g., mixing pixels and percentages).
